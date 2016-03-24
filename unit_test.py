@@ -50,7 +50,9 @@ class ModuleTest(unittest.TestCase):
         self.assertTrue(test)
 
     def test_all_pin_state_high(self):
-        test = self.ishibashi.all_should_be_high(20,21)
+        test = self.ishibashi.in_time(100,
+            self.ishibashi.all_should_be_high(20,21)
+            )
         self.assertTrue(test)
 
     def test_all_pin_state_low(self):

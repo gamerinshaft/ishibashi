@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 import os, sys, unittest
 from ishibashi import Ishibashi
+from logging import getLogger,StreamHandler
+logger = getLogger(__name__)
+handler = StreamHandler()
+handler.setLevel(sys.flags.debug)
+logger.setLevel(sys.flags.debug)
+logger.addHandler(handler)
 
 class ModuleTest(unittest.TestCase):
     """Module Test"""
@@ -9,28 +15,28 @@ class ModuleTest(unittest.TestCase):
     # テストクラスが初期化される際に一度だけ呼ばれる (python2.7以上)
     @classmethod
     def setUpClass(cls):
-        if sys.flags.debug: print('> setUpClass method is called.')
+        logger.debug('> setUpClass method is called.')
         # テストの準備するための重い処理のメソッドを実行
         cls.CLS_VAL = '> setUpClass : initialized!'
-        if sys.flags.debug: print(cls.CLS_VAL)
+        logger.debug(cls.CLS_VAL)
 
     # テストクラスが解放される際に一度だけ呼ばれる (python2.7以上)
     @classmethod
     def tearDownClass(cls):
-        if sys.flags.debug: print('> tearDownClass method is called.')
+        logger.debug('> tearDownClass method is called.')
         # setUpClassで準備したオブジェクトを解放する
         cls.CLS_VAL = '> tearDownClass : released!'
-        if sys.flags.debug: print(cls.CLS_VAL)
+        logger.debug(cls.CLS_VAL)
 
     # テストメソッドを実行するたびに呼ばれる
     def setUp(self):
-        if sys.flags.debug: print(os.linesep + '> setUp method is called.')
+        logger.debug(os.linesep + '> setUp method is called.')
         # テストの準備をするための軽い処理を実行
         self.ishibashi = Ishibashi("bcm")
 
     # テストメソッドの実行が終わるたびに呼ばれる
     def tearDown(self):
-        if sys.flags.debug: print(os.linesep + '> tearDown method is called.')
+        logger.debug(os.linesep + '> tearDown method is called.')
         # setUpで準備したオブジェクトを解放する
         self.ishibashi.finish()
 

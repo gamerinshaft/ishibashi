@@ -27,16 +27,19 @@ class Ishibashi:
       else:
         return False
 
-    def check_volt():
-      return 'checking volt'
+    def all_should_be_low(self, *args):
+      for gpio in args:
+        if not self.should_be_low(gpio):
+          return False
+      return True
 
-    # テスト対象のメソッド
-    def return_hoge(self):
-        return 'hoge'
+    def all_should_be_high(self, *args):
+      for gpio in args:
+        if not self.should_be_high(gpio):
+          return False
+      return True
 
-    # テスト対象のメソッド
-    def return_poyo(self):
-        return 'poyo'
-
-    def finish():
+    def finish(self):
       self.GPIO.cleanup()
+
+

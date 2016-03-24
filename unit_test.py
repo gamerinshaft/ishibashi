@@ -2,8 +2,8 @@
 import os, sys, unittest
 from ishibashi import Ishibashi
 
-class SampleTest(unittest.TestCase):
-    """あるクラスをテストするテストクラス"""
+class ModuleTest(unittest.TestCase):
+    """Module Test"""
     CLS_VAL = 'none'
 
     # テストクラスが初期化される際に一度だけ呼ばれる (python2.7以上)
@@ -26,20 +26,29 @@ class SampleTest(unittest.TestCase):
     def setUp(self):
         if sys.flags.debug: print(os.linesep + '> setUp method is called.')
         # テストの準備をするための軽い処理を実行
-        self.smpl = Ishibashi("bcm")
+        self.ishibashi = Ishibashi("bcm")
 
     # テストメソッドの実行が終わるたびに呼ばれる
     def tearDown(self):
         if sys.flags.debug: print(os.linesep + '> tearDown method is called.')
         # setUpで準備したオブジェクトを解放する
-        self.smpl.finish()
+        self.ishibashi.finish()
 
-    def test_hoge(self):
-        test = self.smpl.should_be_high(20)
+    #=============================================================================
+    def test_single_pin_state_high(self):
+        test = self.ishibashi.should_be_high(20)
         self.assertTrue(test)
 
-    def test_poyo(self):
-        test = self.smpl.should_be_low(20)
+    def test_single_pin_state_low(self):
+        test = self.ishibashi.should_be_low(21)
+        self.assertTrue(test)
+
+    def test_all_pin_state_high(self):
+        test = self.ishibashi.all_should_be_high(20,21)
+        self.assertTrue(test)
+
+    def test_all_pin_state_low(self):
+        test = self.ishibashi.all_should_be_low(20,21)
         self.assertTrue(test)
 
 if __name__ == '__main__':

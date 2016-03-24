@@ -39,6 +39,13 @@ class Ishibashi:
           return False
       return True
 
+    def in_time(self, wait_time, method):
+      result = method
+      wait_time = wait_time / 1000.0
+      time.sleep(wait_time)
+      return result
+
+
     def finish(self):
       self.GPIO.cleanup()
 

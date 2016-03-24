@@ -15,7 +15,7 @@ class Ishibashi:
 
     def should_be_high(self, gpio):
       self.GPIO.setup(gpio,self.GPIO.IN)
-      if GPIO.input(gpio):
+      if self.GPIO.input(gpio):
         return True
       else:
         return False
@@ -39,12 +39,32 @@ class Ishibashi:
           return False
       return True
 
-    def in_time(self, wait_time, method):
-      result = method
-      wait_time = wait_time / 1000.0
-      time.sleep(wait_time)
-      return result
+    def detect_high_edge(self, gpio, wait_time):
+      self.GPIO.setup(gpio,self.GPIO.IN)
+      self.GPIO.add_event_detect(gpio, GPIO.RISING)
+      time.sleep(wait_time / 1000.0)
+      if self.GPIO.event_detected(gpio):
+        return True
+      else:
+        return False
 
+    def detect_low_edge(self, gpio, wait_time):
+      self.GPIO.setup(gpio,self.GPIO.IN)
+      self.GPIO.add_event_detect(gpio, GPIO.FALLING)
+      time.sleep(wait_time / 1000.0)
+      if self.GPIO.event_detected(gpio):
+        return True
+      else:
+        return False
+
+    def detect_high_or_low_edge(self, gpio, wait_time):
+      self.GPIO.setup(gpio,self.GPIO.IN)
+      self.GPIO.add_event_detect(gpio, GPIO.BOTH)
+      time.sleep(wait_time / 1000.0)
+      if self.GPIO.event_detected(gpio):
+        return True
+      else:
+        return False
 
     def finish(self):
       self.GPIO.cleanup()

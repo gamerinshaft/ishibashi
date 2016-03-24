@@ -32,16 +32,15 @@ class SampleTest(unittest.TestCase):
     def tearDown(self):
         if sys.flags.debug: print(os.linesep + '> tearDown method is called.')
         # setUpで準備したオブジェクトを解放する
+        self.smpl.finish()
 
     def test_hoge(self):
-        expected = 'HIGH'
-        actual = self.smpl.should_be_high(20)
-        self.assertEqual(expected, actual)
+        test = self.smpl.should_be_high(20)
+        self.assertTrue(test)
 
     def test_poyo(self):
-        expected = 'LOW'
-        actual = self.smpl.should_be_low(20) # 凡ミス
-        self.assertEqual(expected, actual)
+        test = self.smpl.should_be_low(20)
+        self.assertTrue(test)
 
 if __name__ == '__main__':
     # unittestを実行

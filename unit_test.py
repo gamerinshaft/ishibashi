@@ -48,7 +48,6 @@ class ModuleTest(unittest.TestCase):
         test = self.ishibashi.should_be_high(12)
         self.assertTrue(test)
 
-
     def test_single_pin_state_high(self):
         test = self.ishibashi.should_be_high(20)
         self.assertTrue(test)

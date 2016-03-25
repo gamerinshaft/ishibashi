@@ -1,4 +1,6 @@
 # Ishibashi
 
-[ドキュメント](https://github.com/gamerinshaft/ishibashi.github.io)
+unit tests for hardware modules.
+
+[docs](gamerinshaft.github.io/ishibashi)
 

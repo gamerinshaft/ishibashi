@@ -4,31 +4,46 @@
   <title>Ishibashi</title>
   <style>
     html, body{
-      background-color: #ddd;
+      background-color: #fff;
     }
-    body > * {
-      background-color: #565656;
-      border: solid 1px #b9b9b9;
-      -webkit-font-smoothing: antialiased;
-      font-weight: 100;
-      position: relative;
-      margin: 24px 8px;
-      padding: 24px;
-      color: white;
-      text-shadow: -1px -1px black;
+
+    body {
+      margin: 0 auto;
+      padding-left: 100px;
+      width: 900px;
+      font-size: 95%;
+      line-height: 1.7;
+      font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'Hiragino Kaku Gothic Pro', 'Meiryo', 'MS PGothic', sans-serif;
+      color: #454545;
     }
-    body > *:after {
-      content: "";
-      display: block;
-      position: absolute;
-      right: -2px;
-      left: -2px;
-      top: -2px;
-      bottom: -2px;
-      border: solid 1px white;
+    h1 {
+      display: inline-block;
+      border-bottom: solid 3px #30A248;
     }
+
+    h2 {
+      margin: 1.3em 0 0.8em 0;
+      padding: 0.2em 0.6em;
+      line-height: 1.5;
+      border-left: 5px solid #37A4CB;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    }
+
+    pre {
+      padding: 0.8em 0.6em;
+      border: 1px solid #ddd;
+    }
+
     ul {
       list-style: none;
+    }
+
+    h4 {
+      margin: 1.3em 0 0.8em 0;
+      padding: 0.2em 0.6em;
+      line-height: 1.5;
+      border-left: 5px solid #CB3774;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
@@ -36,21 +51,22 @@
   <div>
     <h1>Look before you leap.</h1>
     <p>
-      check your mistake before deploying servieces.
-      ishibashi supports your tests for hardware modules:
+      check your mistake before deploying servieces.<br>
+      ishibashi is python library supports your tests for hardware modules: <br>
       continuity checks, ble responses, etc...
     </p>
   </div>
   <div>
     <h2>Setup</h2>
-    <hr>
+    <p>
+      Please install ishibashi library to your raspberry pi or suchlike.
+    </p>
     <pre>
       pip install ishibashi
     </pre>
   </div>
   <div>
     <h2>Usage</h2>
-    <hr>
     <p>
       If you try to use Ishibashi, please use on unittest. (default library)
       example:
@@ -110,18 +126,17 @@
   </div>
   <div>
     <h2>Methods</h2>
-    <hr>
     <ul>
-      <li><pre>pin_on</pre></li>
-      <li><pre>pin_off</pre></li>
-      <li><pre>should_be_heigh</pre></li>
-      <li><pre>should_be_low</pre></li>
-      <li><pre>all_should_be_high</pre></li>
-      <li><pre>all_should_be_low</pre></li>
-      <li><pre>detect_high_edge</pre></li>
-      <li><pre>detect_low_edge</pre></li>
-      <li><pre>detect_high_or_low_edge</pre></li>
-      <li><pre>finish</pre></li>
+      <li><h4>pin_on</h4></li>
+      <li><h4>pin_off</h4></li>
+      <li><h4>should_be_heigh</h4></li>
+      <li><h4>should_be_low</h4></li>
+      <li><h4>all_should_be_high</h4></li>
+      <li><h4>all_should_be_low</h4></li>
+      <li><h4>detect_high_edge</h4></li>
+      <li><h4>detect_low_edge</h4></li>
+      <li><h4>detect_high_or_low_edge</h4></li>
+      <li><h4>finish</pre></li>
     </ul>
   </div>
 </body>

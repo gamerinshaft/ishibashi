@@ -101,11 +101,11 @@
               self.assertTrue(test)
 
           def test_all_pin_state_high(self):
-              test = self.ishibashi.all_should_be_high(12, 20)
+              test = self.ishibashi.should_be_all_high(12, 20)
               self.assertTrue(test)
 
           def test_all_pin_state_low(self):
-              test = self.ishibashi.all_should_be_low(16,21)
+              test = self.ishibashi.should_be_all_low(16,21)
               self.assertTrue(test)
 
           def test_detect_high_edge(self):
@@ -131,8 +131,8 @@
       <li><h4>pin_off</h4></li>
       <li><h4>should_be_heigh</h4></li>
       <li><h4>should_be_low</h4></li>
-      <li><h4>all_should_be_high</h4></li>
-      <li><h4>all_should_be_low</h4></li>
+      <li><h4>should_be_all_high</h4></li>
+      <li><h4>should_be_all_low</h4></li>
       <li><h4>detect_high_edge</h4></li>
       <li><h4>detect_low_edge</h4></li>
       <li><h4>detect_high_or_low_edge</h4></li>

@@ -57,11 +57,11 @@ class ModuleTest(unittest.TestCase):
         self.assertTrue(test)
 
     def test_all_pin_state_high(self):
-        test = self.ishibashi.all_should_be_high(12, 20)
+        test = self.ishibashi.should_be_all_high(12, 20)
         self.assertTrue(test)
 
     def test_all_pin_state_low(self):
-        test = self.ishibashi.all_should_be_low(16,21)
+        test = self.ishibashi.should_be_all_low(16,21)
         self.assertTrue(test)
 
     def test_detect_high_edge(self):

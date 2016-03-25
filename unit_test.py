@@ -49,33 +49,33 @@ class ModuleTest(unittest.TestCase):
         self.assertTrue(test)
 
 
-    # def test_single_pin_state_high(self):
-    #     test = self.ishibashi.should_be_high(20)
-    #     self.assertTrue(test)
+    def test_single_pin_state_high(self):
+        test = self.ishibashi.should_be_high(20)
+        self.assertTrue(test)
 
-    # def test_single_pin_state_low(self):
-    #     test = self.ishibashi.should_be_low(21)
-    #     self.assertTrue(test)
+    def test_single_pin_state_low(self):
+        test = self.ishibashi.should_be_low(21)
+        self.assertTrue(test)
 
-    # def test_all_pin_state_high(self):
-    #     test = self.ishibashi.all_should_be_high(12, 20)
-    #     self.assertTrue(test)
+    def test_all_pin_state_high(self):
+        test = self.ishibashi.all_should_be_high(12, 20)
+        self.assertTrue(test)
 
-    # def test_all_pin_state_low(self):
-    #     test = self.ishibashi.all_should_be_low(16,21)
-    #     self.assertTrue(test)
+    def test_all_pin_state_low(self):
+        test = self.ishibashi.all_should_be_low(16,21)
+        self.assertTrue(test)
 
-    # def test_detect_high_edge(self):
-    #     test = self.ishibashi.detect_high_edge(20, 1000)
-    #     self.assertTrue(test)
+    def test_detect_high_edge(self):
+        test = self.ishibashi.detect_high_edge(20, 1000)
+        self.assertTrue(test)
 
-    # def test_detect_low_edge(self):
-    #     test = self.ishibashi.detect_low_edge(20, 1000)
-    #     self.assertTrue(test)
+    def test_detect_low_edge(self):
+        test = self.ishibashi.detect_low_edge(20, 1000)
+        self.assertTrue(test)
 
-    # def test_detect_high_or_low_edge(self):
-    #     test = self.ishibashi.detect_high_or_low_edge(20, 1000)
-    #     self.assertTrue(test)
+    def test_detect_high_or_low_edge(self):
+        test = self.ishibashi.detect_high_or_low_edge(20, 1000)
+        self.assertTrue(test)
 
 if __name__ == '__main__':
     # unittestを実行

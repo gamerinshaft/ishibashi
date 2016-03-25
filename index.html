@@ -2,26 +2,57 @@
 <html>
 <head>
   <title>Ishibashi</title>
+  <style>
+    html, body{
+      background-color: #ddd;
+    }
+    body > * {
+      background-color: #efefef;
+      border: solid 1px #b9b9b9;
+      -webkit-font-smoothing: antialiased;
+      font-weight: 100;
+      position: relative;
+      margin: 24px 8px;
+      padding: 24px;
+    }
+    body > *:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: -2px;
+      left: -2px;
+      top: -2px;
+      bottom: -2px;
+      border: solid 1px white;
+    }
+    ul {
+      list-style: none;
+    }
+  </style>
 </head>
 <body>
-  <h1>Look before you leap.</h1>
-  <p>
-    check your mistake before deploying servieces.
-    ishibashi supports your tests for hardware modules:
-    continuity checks, ble responses, etc…
-  </p>
-
-  <h2>Setup</h2>
-  <p>
+  <div>
+    <h1>Look before you leap.</h1>
+    <p>
+      check your mistake before deploying servieces.
+      ishibashi supports your tests for hardware modules:
+      continuity checks, ble responses, etc...
+    </p>
+  </div>
+  <div>
+    <h2>Setup</h2>
+    <hr>
     <pre>
       pip install ishibashi
     </pre>
-  </p>
-
-  <h2>Usage</h2>
-  <p>
-    If you try to use Ishibashi, please use on unittest. (default library)
-    example:
+  </div>
+  <div>
+    <h2>Usage</h2>
+    <hr>
+    <p>
+      If you try to use Ishibashi, please use on unittest. (default library)
+      example:
+    </p>
     <pre>
       # -*- coding: utf-8 -*-
       import os, sys, unittest
@@ -74,20 +105,22 @@
       if __name__ == '__main__':
           unittest.main()
     </pre>
-  </p>
-
-  <h2>Methods</h2>
-  <ul>
-    <li><pre>pin_on</pre></li>
-    <li><pre>pin_off</pre></li>
-    <li><pre>should_be_heigh</pre></li>
-    <li><pre>should_be_low</pre></li>
-    <li><pre>all_should_be_high</pre></li>
-    <li><pre>all_should_be_low</pre></li>
-    <li><pre>detect_high_edge</pre></li>
-    <li><pre>detect_low_edge</pre></li>
-    <li><pre>detect_high_or_low_edge</pre></li>
-    <li><pre>finish</pre></li>
-  </ul>
+  </div>
+  <div>
+    <h2>Methods</h2>
+    <hr>
+    <ul>
+      <li><pre>pin_on</pre></li>
+      <li><pre>pin_off</pre></li>
+      <li><pre>should_be_heigh</pre></li>
+      <li><pre>should_be_low</pre></li>
+      <li><pre>all_should_be_high</pre></li>
+      <li><pre>all_should_be_low</pre></li>
+      <li><pre>detect_high_edge</pre></li>
+      <li><pre>detect_low_edge</pre></li>
+      <li><pre>detect_high_or_low_edge</pre></li>
+      <li><pre>finish</pre></li>
+    </ul>
+  </div>
 </body>
 </html>

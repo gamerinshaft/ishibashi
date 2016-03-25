@@ -2,5 +2,5 @@
 
 unit tests for hardware modules.
 
-[docs](gamerinshaft.github.io/ishibashi)
+[docs](http://gamerinshaft.github.io/ishibashi)
 

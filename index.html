@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ishibashi</title>
+</head>
+<body>
+  <h1>Look before you leap.</h1>
+  <p>
+    check your mistake before deploying servieces.
+    ishibashi supports your tests for hardware modules:
+    continuity checks, ble responses, etc…
+  </p>
+
+  <h2>Setup</h2>
+  <p>
+    <pre>
+      pip install ishibashi
+    </pre>
+  </p>
+
+  <h2>Usage</h2>
+  <p>
+    If you try to use Ishibashi, please use on unittest. (default library)
+    example:
+    <pre>
+      # -*- coding: utf-8 -*-
+      import os, sys, unittest
+      from ishibashi import Ishibashi
+
+      class ModuleTest(unittest.TestCase):
+          """Module Test"""
+
+          def setUp(self):
+              self.ishibashi = Ishibashi("bcm")
+
+          def tearDown(self):
+              self.ishibashi.finish()
+
+          def test_signal_on(self):
+              test = self.ishibashi.should_be_low(12)
+              self.assertTrue(test)
+              self.ishibashi.pin_on(20)
+              test = self.ishibashi.should_be_high(12)
+              self.assertTrue(test)
+
+          def test_single_pin_state_high(self):
+              test = self.ishibashi.should_be_high(20)
+              self.assertTrue(test)
+
+          def test_single_pin_state_low(self):
+              test = self.ishibashi.should_be_low(21)
+              self.assertTrue(test)
+
+          def test_all_pin_state_high(self):
+              test = self.ishibashi.all_should_be_high(12, 20)
+              self.assertTrue(test)
+
+          def test_all_pin_state_low(self):
+              test = self.ishibashi.all_should_be_low(16,21)
+              self.assertTrue(test)
+
+          def test_detect_high_edge(self):
+              test = self.ishibashi.detect_high_edge(20, 1000)
+              self.assertTrue(test)
+
+          def test_detect_low_edge(self):
+              test = self.ishibashi.detect_low_edge(20, 1000)
+              self.assertTrue(test)
+
+          def test_detect_high_or_low_edge(self):
+              test = self.ishibashi.detect_high_or_low_edge(20, 1000)
+              self.assertTrue(test)
+
+      if __name__ == '__main__':
+          unittest.main()
+    </pre>
+  </p>
+
+  <h2>Methods</h2>
+  <ul>
+    <li><pre>pin_on</pre></li>
+    <li><pre>pin_off</pre></li>
+    <li><pre>should_be_heigh</pre></li>
+    <li><pre>should_be_low</pre></li>
+    <li><pre>all_should_be_high</pre></li>
+    <li><pre>all_should_be_low</pre></li>
+    <li><pre>detect_high_edge</pre></li>
+    <li><pre>detect_low_edge</pre></li>
+    <li><pre>detect_high_or_low_edge</pre></li>
+    <li><pre>finish</pre></li>
+  </ul>
+</body>
+</html>

@@ -17,7 +17,7 @@ class Ishibashi:
       self.GPIO.setup(gpio, self.GPIO.OUT)
       self.GPIO.output(gpio, self.GPIO.HIGH)
 
-    def pin_of(self, gpio):
+    def pin_off(self, gpio):
       self.GPIO.setup(gpio, self.GPIO.OUT)
       self.GPIO.output(gpio, self.GPIO.LOW)
 

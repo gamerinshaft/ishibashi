@@ -134,16 +134,66 @@
   <div>
     <h2>Methods</h2>
     <ul>
-      <li><h4>pin_on(gpio)</h4></li>
-      <li><h4>pin_off(gpio)</h4></li>
-      <li><h4>should_be_heigh(gpio)</h4></li>
-      <li><h4>should_be_low(gpio)</h4></li>
-      <li><h4>should_be_all_high(*gpio)</h4></li>
-      <li><h4>should_be_all_low(*gpio)</h4></li>
-      <li><h4>detect_high_edge(gpio, wait_time)</h4></li>
-      <li><h4>detect_low_edge(gpio, wait_time)</h4></li>
-      <li><h4>detect_high_or_low_edge(gpio, wait_time)</h4></li>
-      <li><h4>finish</pre></li>
+      <li>
+        <h4>pin_on(gpio)</h4>
+        <p>
+          Make pin's state HIGH
+        </p>
+      </li>
+      <li>
+        <h4>pin_off(gpio)</h4>
+        <p>
+          Make pin's state LOW
+        </p>
+      </li>
+      <li>
+        <h4>should_be_high(gpio)</h4>
+        <p>
+          Check pin's state is HIGH
+        </p>
+      </li>
+      <li>
+        <h4>should_be_low(gpio)</h4>
+        <p>
+          Check pin's state is LOW
+        </p>
+      </li>
+      <li>
+        <h4>should_be_all_high(*gpio)</h4>
+        <p>
+          Check all pin's state are HIGH
+        </p>
+      </li>
+      <li>
+        <h4>should_be_all_low(*gpio)</h4>
+        <p>
+          Check all pin's state are LOW
+        </p>
+      </li>
+      <li>
+        <h4>detect_high_edge(gpio, wait_time)</h4>
+        <p>
+          Check pin's high edge detected in time
+        </p>
+      </li>
+      <li>
+        <h4>detect_low_edge(gpio, wait_time)</h4>
+        <p>
+          Check pin's low edge detected in time
+        </p>
+      </li>
+      <li>
+        <h4>detect_high_or_low_edge(gpio, wait_time)</h4>
+        <p>
+          Check pin's high or low edge detected in time
+        </p>
+      </li>
+      <li>
+        <h4>finish()</h4>
+        <p>
+          close gpio
+        </p>
+      </li>
     </ul>
   </div>
 </body>
